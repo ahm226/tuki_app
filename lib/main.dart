@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
           );
         },
         debugShowCheckedModeBanner: false,
-        title: 'Blue J',
+        title: 'Tuki App',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),

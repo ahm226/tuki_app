@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tuki_app/constants/global_variables.dart';
 
-import '../constants/custom_validators.dart';
-import '../widgets/custom_textfield.dart';
-import '../widgets/custom_widget.dart';
+import '../../constants/custom_validators.dart';
+import '../../widgets/custom_textfield.dart';
+import '../../widgets/custom_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tuki_app/constants/global_variables.dart';
 
-import '../constants/custom_navigation.dart';
+import '../../constants/custom_navigation.dart';
 import 'booking_listing.dart';
 import 'event_listing.dart';
 import 'guard_listing.dart';

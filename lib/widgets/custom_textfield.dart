@@ -41,6 +41,8 @@ class _AuthTextFieldState extends State<AuthTextField> {
         autovalidateMode: AutovalidateMode.disabled,
         style: bodyNormal.copyWith(fontFamily: "MontserratSemiBold"),
         decoration: InputDecoration(
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(
@@ -159,26 +161,41 @@ class _CustomTextFieldState extends State<CustomTextField> {
             suffixText: widget.suffixText ?? '',
             prefixText: widget.prefixText ?? '',
             contentPadding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             disabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide(color: Colors.black26, width: 0.7),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: Colors.grey, // Make the border transparent
+                width: 1, // Set the width to 0 to make it disappear
+              ),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide(color: Colors.black26, width: 0.7),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: Colors.grey, // Make the border transparent
+                width: 1, // Set the width to 0 to make it disappear
+              ),
             ),
             errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: const BorderSide(color: Colors.black26, width: 0.7),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: Colors.grey, // Make the border transparent
+                width: 1, // Set the width to 0 to make it disappear
+              ),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: const BorderSide(color: Colors.black26, width: 0.7),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: Colors.grey, // Make the border transparent
+                width: 1, // Set the width to 0 to make it disappear
+              ),
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: BorderSide(color: Colors.black26, width: 0.7),
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: Colors.grey, // Make the border transparent
+                width: 1, // Set the width to 0 to make it disappear
+              ),
             ),
             hintText: widget.hintText,
             hintStyle: bodyNormal.copyWith(

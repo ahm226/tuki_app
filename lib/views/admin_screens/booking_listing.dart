@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-import '../constants/global_variables.dart';
+import '../../constants/global_variables.dart';
 
 class BookingListing extends StatefulWidget {
   const BookingListing({Key? key}) : super(key: key);

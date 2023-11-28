@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
-import '../constants/global_variables.dart';
+import '../../constants/custom_navigation.dart';
+import '../../constants/global_variables.dart';
+import 'create_guard.dart';
 
 class GuardListing extends StatefulWidget {
   const GuardListing({Key? key}) : super(key: key);
@@ -47,7 +49,9 @@ class _GuardListingState extends State<GuardListing> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      PageTransition.pageNavigation(page: CreateGuard());
+                    },
                     child: Container(
                       height: 4.h,
                       width: 26.w,

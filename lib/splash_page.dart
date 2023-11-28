@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:tuki_app/views/admin_dashboard.dart';
+import 'package:tuki_app/views/admin_screens/admin_dashboard.dart';
 
 import 'constants/custom_navigation.dart';
 import 'constants/global_variables.dart';
