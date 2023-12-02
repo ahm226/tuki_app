@@ -31,7 +31,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
         centerTitle: true,
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.menu,
             color: Colors.black,
           ), // You can use any other icon you prefer
@@ -55,7 +55,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(),
+              decoration: const BoxDecoration(),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -78,7 +78,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.person),
+              leading: const Icon(Icons.person),
               title: const Text("My Profile"),
               onTap: () {
                 // Update the state of the app.
@@ -86,7 +86,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.notifications),
+              leading: const Icon(Icons.notifications),
               title: const Text('Notifications'),
               onTap: () {
                 // Update the state of the app.
@@ -94,7 +94,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.share),
+              leading: const Icon(Icons.share),
               title: const Text('Share App'),
               onTap: () {
                 // Update the state of the app.
@@ -102,7 +102,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.record_voice_over_outlined),
+              leading: const Icon(Icons.record_voice_over_outlined),
               title: const Text('Rate App'),
               onTap: () {
                 // Update the state of the app.
@@ -124,13 +124,13 @@ class _AdminDashboardState extends State<AdminDashboard> {
               children: [
                 InkWell(
                   onTap: () {
-                    PageTransition.pageNavigation(page: OwnerListing());
+                    PageTransition.pageNavigation(page: const OwnerListing());
                   },
                   child: Container(
                     height: 6.h,
                     width: 30.w,
                     decoration: BoxDecoration(
-                      color: Color(0xff57009B26),
+                      color: const Color(0xff57009B26),
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: Row(
@@ -140,12 +140,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
                         Container(
                           width: 3.h,
                           height: 10.w,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color:
                                 Colors.white, // Replace with your desired color
                           ),
-                          child: Center(child: Text("38")),
+                          child: const Center(child: Text("38")),
                         ),
                         Container(
                           child: Center(
@@ -160,13 +160,13 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 ),
                 InkWell(
                   onTap: () {
-                    PageTransition.pageNavigation(page: GuardListing());
+                    PageTransition.pageNavigation(page: const GuardListing());
                   },
                   child: Container(
                     height: 6.h,
                     width: 30.w,
                     decoration: BoxDecoration(
-                      color: Color(0xff57009B26),
+                      color: const Color(0xff57009B26),
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: Row(
@@ -176,12 +176,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
                         Container(
                           width: 3.h,
                           height: 10.w,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color:
                                 Colors.white, // Replace with your desired color
                           ),
-                          child: Center(child: Text("05")),
+                          child: const Center(child: Text("05")),
                         ),
                         Container(
                           child: Center(
@@ -196,13 +196,13 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 ),
                 InkWell(
                   onTap: () {
-                    PageTransition.pageNavigation(page: BookingListing());
+                    PageTransition.pageNavigation(page: const BookingListing());
                   },
                   child: Container(
                     height: 6.h,
                     width: 30.w,
                     decoration: BoxDecoration(
-                      color: Color(0xff57009B26),
+                      color: const Color(0xff57009B26),
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: Row(
@@ -212,12 +212,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
                         Container(
                           width: 3.h,
                           height: 10.w,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color:
                                 Colors.white, // Replace with your desired color
                           ),
-                          child: Center(child: Text("03")),
+                          child: const Center(child: Text("03")),
                         ),
                         Container(
                           child: Center(
@@ -245,7 +245,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 ),
                 InkWell(
                   onTap: () {
-                    PageTransition.pageNavigation(page: EventListing());
+                    PageTransition.pageNavigation(page: const EventListing());
                   },
                   child: Container(
                     height: 3.h,
@@ -324,8 +324,8 @@ class _AdminDashboardState extends State<AdminDashboard> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18.0, right: 18.0),
                     child: Divider(),
                   ),
                   SizedBox(
@@ -343,8 +343,8 @@ class _AdminDashboardState extends State<AdminDashboard> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18.0, right: 18.0),
                     child: Divider(),
                   ),
                   SizedBox(
@@ -366,8 +366,8 @@ class _AdminDashboardState extends State<AdminDashboard> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18.0, right: 18.0),
                     child: Divider(),
                   ),
                   SizedBox(
@@ -436,15 +436,15 @@ class _AdminDashboardState extends State<AdminDashboard> {
               padding: const EdgeInsets.all(5.0),
               child: InkWell(
                 onTap: () {
-                  PageTransition.pageNavigation(page: CreateOwner());
+                  PageTransition.pageNavigation(page: const CreateOwner());
                 },
                 child: Container(
                   height: 5.h,
                   width: 90.w,
                   decoration: BoxDecoration(
-                    color: Color(0xff57009B26),
+                    color: const Color(0xff57009B26),
                     border: Border.all(
-                      color: Color(0xffC7C6C6FF), // Border width
+                      color: const Color(0xffC7C6C6FF), // Border width
                     ),
                     borderRadius: BorderRadius.circular(5.0),
                   ),
@@ -469,7 +469,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                               ),
                             ],
                           ),
-                          Icon(Icons.navigate_next_outlined)
+                          const Icon(Icons.navigate_next_outlined)
                         ],
                       ),
                     ),
@@ -481,15 +481,15 @@ class _AdminDashboardState extends State<AdminDashboard> {
               padding: const EdgeInsets.all(5.0),
               child: InkWell(
                 onTap: () {
-                  PageTransition.pageNavigation(page: CreateGuard());
+                  PageTransition.pageNavigation(page: const CreateGuard());
                 },
                 child: Container(
                   height: 5.h,
                   width: 90.w,
                   decoration: BoxDecoration(
-                    color: Color(0xfffaf5cc),
+                    color: const Color(0xfffaf5cc),
                     border: Border.all(
-                      color: Color(0xffC7C6C6FF), // Border width
+                      color: const Color(0xffC7C6C6FF), // Border width
                     ),
                     borderRadius: BorderRadius.circular(5.0),
                   ),
@@ -514,7 +514,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                               ),
                             ],
                           ),
-                          Icon(Icons.navigate_next_outlined)
+                          const Icon(Icons.navigate_next_outlined)
                         ],
                       ),
                     ),
@@ -532,9 +532,9 @@ class _AdminDashboardState extends State<AdminDashboard> {
                   height: 5.h,
                   width: 90.w,
                   decoration: BoxDecoration(
-                    color: Color(0xffa5b2ec),
+                    color: const Color(0xffa5b2ec),
                     border: Border.all(
-                      color: Color(0xffC7C6C6FF), // Border width
+                      color: const Color(0xffC7C6C6FF), // Border width
                     ),
                     borderRadius: BorderRadius.circular(5.0),
                   ),
@@ -559,7 +559,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                               ),
                             ],
                           ),
-                          Icon(Icons.navigate_next_outlined)
+                          const Icon(Icons.navigate_next_outlined)
                         ],
                       ),
                     ),
