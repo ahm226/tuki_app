@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:tuki_app/views/admin_screens/admin_dashboard.dart';
+import 'package:tuki_app/views/admin_screens/login_screen.dart';
 
 import 'constants/custom_navigation.dart';
 import 'constants/global_variables.dart';
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   getData() async {
     Future.delayed(const Duration(milliseconds: 2000), () {
-      PageTransition.pageProperNavigation(page: AdminDashboard());
+      PageTransition.pageProperNavigation(page: LoginScreen());
     });
   }
 

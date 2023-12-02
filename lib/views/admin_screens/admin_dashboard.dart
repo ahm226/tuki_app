@@ -4,6 +4,8 @@ import 'package:tuki_app/constants/global_variables.dart';
 
 import '../../constants/custom_navigation.dart';
 import 'booking_listing.dart';
+import 'create_guard.dart';
+import 'create_owner.dart';
 import 'event_listing.dart';
 import 'guard_listing.dart';
 import 'owners_listing.dart';
@@ -16,9 +18,11 @@ class AdminDashboard extends StatefulWidget {
 }
 
 class _AdminDashboardState extends State<AdminDashboard> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       appBar: AppBar(
         title: Text(
           "Dashboard (Community 1)",
@@ -27,13 +31,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
         centerTitle: true,
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.menu,
             color: Colors.black,
           ), // You can use any other icon you prefer
           onPressed: () {
-            // Add your code to handle the sidebar icon tap here
-            // For example, you can open a drawer or navigate to a new screen
+            _key.currentState!.openDrawer();
           },
         ),
         actions: [
@@ -42,6 +45,72 @@ class _AdminDashboardState extends State<AdminDashboard> {
             color: Colors.yellow[900],
           )
         ],
+      ),
+      drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: const BoxDecoration(),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    "assest/images/ownerName.png",
+                    height: 7.h,
+                  ),
+                  Text(
+                    "Nelson Aston",
+                    style: bodyNormal.copyWith(fontSize: 18),
+                  ),
+                  Text(
+                    "nelsonaston@gmail.com",
+                    style: bodyNormal.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text("My Profile"),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.notifications),
+              title: const Text('Notifications'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.share),
+              title: const Text('Share App'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.record_voice_over_outlined),
+              title: const Text('Rate App'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+          ],
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -55,13 +124,13 @@ class _AdminDashboardState extends State<AdminDashboard> {
               children: [
                 InkWell(
                   onTap: () {
-                    PageTransition.pageNavigation(page: OwnerListing());
+                    PageTransition.pageNavigation(page: const OwnerListing());
                   },
                   child: Container(
                     height: 6.h,
                     width: 30.w,
                     decoration: BoxDecoration(
-                      color: Color(0xff57009B26),
+                      color: const Color(0xff57009B26),
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: Row(
@@ -71,12 +140,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
                         Container(
                           width: 3.h,
                           height: 10.w,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color:
                                 Colors.white, // Replace with your desired color
                           ),
-                          child: Center(child: Text("38")),
+                          child: const Center(child: Text("38")),
                         ),
                         Container(
                           child: Center(
@@ -91,13 +160,13 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 ),
                 InkWell(
                   onTap: () {
-                    PageTransition.pageNavigation(page: GuardListing());
+                    PageTransition.pageNavigation(page: const GuardListing());
                   },
                   child: Container(
                     height: 6.h,
                     width: 30.w,
                     decoration: BoxDecoration(
-                      color: Color(0xff57009B26),
+                      color: const Color(0xff57009B26),
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: Row(
@@ -107,12 +176,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
                         Container(
                           width: 3.h,
                           height: 10.w,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color:
                                 Colors.white, // Replace with your desired color
                           ),
-                          child: Center(child: Text("05")),
+                          child: const Center(child: Text("05")),
                         ),
                         Container(
                           child: Center(
@@ -127,13 +196,13 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 ),
                 InkWell(
                   onTap: () {
-                    PageTransition.pageNavigation(page: BookingListing());
+                    PageTransition.pageNavigation(page: const BookingListing());
                   },
                   child: Container(
                     height: 6.h,
                     width: 30.w,
                     decoration: BoxDecoration(
-                      color: Color(0xff57009B26),
+                      color: const Color(0xff57009B26),
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: Row(
@@ -143,12 +212,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
                         Container(
                           width: 3.h,
                           height: 10.w,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color:
                                 Colors.white, // Replace with your desired color
                           ),
-                          child: Center(child: Text("03")),
+                          child: const Center(child: Text("03")),
                         ),
                         Container(
                           child: Center(
@@ -176,7 +245,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 ),
                 InkWell(
                   onTap: () {
-                    PageTransition.pageNavigation(page: EventListing());
+                    PageTransition.pageNavigation(page: const EventListing());
                   },
                   child: Container(
                     height: 3.h,
@@ -255,8 +324,8 @@ class _AdminDashboardState extends State<AdminDashboard> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18.0, right: 18.0),
                     child: Divider(),
                   ),
                   SizedBox(
@@ -274,8 +343,8 @@ class _AdminDashboardState extends State<AdminDashboard> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18.0, right: 18.0),
                     child: Divider(),
                   ),
                   SizedBox(
@@ -297,8 +366,8 @@ class _AdminDashboardState extends State<AdminDashboard> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 18.0, right: 18.0),
                     child: Divider(),
                   ),
                   SizedBox(
@@ -366,14 +435,16 @@ class _AdminDashboardState extends State<AdminDashboard> {
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  PageTransition.pageNavigation(page: const CreateOwner());
+                },
                 child: Container(
                   height: 5.h,
                   width: 90.w,
                   decoration: BoxDecoration(
-                    color: Color(0xff57009B26),
+                    color: const Color(0xff57009B26),
                     border: Border.all(
-                      color: Color(0xffC7C6C6FF), // Border width
+                      color: const Color(0xffC7C6C6FF), // Border width
                     ),
                     borderRadius: BorderRadius.circular(5.0),
                   ),
@@ -398,7 +469,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                               ),
                             ],
                           ),
-                          Icon(Icons.navigate_next_outlined)
+                          const Icon(Icons.navigate_next_outlined)
                         ],
                       ),
                     ),
@@ -409,14 +480,16 @@ class _AdminDashboardState extends State<AdminDashboard> {
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  PageTransition.pageNavigation(page: const CreateGuard());
+                },
                 child: Container(
                   height: 5.h,
                   width: 90.w,
                   decoration: BoxDecoration(
-                    color: Color(0xfffaf5cc),
+                    color: const Color(0xfffaf5cc),
                     border: Border.all(
-                      color: Color(0xffC7C6C6FF), // Border width
+                      color: const Color(0xffC7C6C6FF), // Border width
                     ),
                     borderRadius: BorderRadius.circular(5.0),
                   ),
@@ -441,7 +514,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                               ),
                             ],
                           ),
-                          Icon(Icons.navigate_next_outlined)
+                          const Icon(Icons.navigate_next_outlined)
                         ],
                       ),
                     ),
@@ -452,14 +525,16 @@ class _AdminDashboardState extends State<AdminDashboard> {
             Padding(
               padding: const EdgeInsets.all(5.0),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  // PageTransition.pageNavigation(page: AdminDashboard());
+                },
                 child: Container(
                   height: 5.h,
                   width: 90.w,
                   decoration: BoxDecoration(
-                    color: Color(0xffa5b2ec),
+                    color: const Color(0xffa5b2ec),
                     border: Border.all(
-                      color: Color(0xffC7C6C6FF), // Border width
+                      color: const Color(0xffC7C6C6FF), // Border width
                     ),
                     borderRadius: BorderRadius.circular(5.0),
                   ),
@@ -484,7 +559,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                               ),
                             ],
                           ),
-                          Icon(Icons.navigate_next_outlined)
+                          const Icon(Icons.navigate_next_outlined)
                         ],
                       ),
                     ),

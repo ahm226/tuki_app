@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 import '../../constants/custom_navigation.dart';
 import '../../constants/global_variables.dart';
 import 'create_guard.dart';
+import 'guard_details.dart';
 
 class GuardListing extends StatefulWidget {
   const GuardListing({Key? key}) : super(key: key);
@@ -128,7 +129,10 @@ class _GuardListingState extends State<GuardListing> {
                                     // 3-dots icon
                                     onSelected: (value) {
                                       // Handle the selected value
-                                      print('Selected: $value');
+                                      if (value == "Option 1") {
+                                        PageTransition.pageNavigation(
+                                            page: const GuardDetails());
+                                      }
                                     },
                                     itemBuilder: (BuildContext context) {
                                       return [
