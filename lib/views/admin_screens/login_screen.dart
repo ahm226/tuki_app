@@ -6,7 +6,7 @@ import '../../constants/custom_navigation.dart';
 import '../../constants/custom_validators.dart';
 import '../../widgets/custom_textfield.dart';
 import '../../widgets/custom_widget.dart';
-import 'admin_dashboard.dart';
+import '../guards_screens/guard_dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -103,7 +103,8 @@ class _LoginScreenState extends State<LoginScreen> {
               child: CustomButton(
                 buttonText: "Sign in",
                 onTap: () {
-                  PageTransition.pageProperNavigation(page: AdminDashboard());
+                  // PageTransition.pageProperNavigation(page: AdminDashboard());
+                  PageTransition.pageProperNavigation(page: GuardDashboard());
                 },
               ),
             ),

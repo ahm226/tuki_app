@@ -41,6 +41,8 @@ dependencies:
   shimmer: ^3.0.0
   shared_preferences: ^2.2.2
   zoom_tap_animation: ^1.1.0
+  dropdown_button2: ^2.3.9
+  qr_code_scanner: ^1.0.1
 
 dev_dependencies:
   flutter_test:
