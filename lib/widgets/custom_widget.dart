@@ -1,3 +1,4 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
@@ -103,6 +104,77 @@ class _CustomAppBarState extends State<CustomAppBar> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class CustomDropdown extends StatefulWidget {
+  final List<String> options;
+  final String hint;
+  final Function(String) onChanged;
+
+  CustomDropdown({
+    required this.options,
+    required this.hint,
+    required this.onChanged,
+  });
+
+  @override
+  _CustomDropdownState createState() => _CustomDropdownState();
+}
+
+class _CustomDropdownState extends State<CustomDropdown> {
+  String? selectedOption;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton2<String>(
+      underline: SizedBox(),
+      value: selectedOption,
+      isExpanded: true,
+      hint: Text(
+        widget.hint,
+        style: bodyNormal.copyWith(
+          color: Colors.black54,
+        ),
+      ),
+      buttonStyleData: ButtonStyleData(
+        height: 7.h,
+        width: 90.w,
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: Colors.grey,
+          ),
+        ),
+      ),
+      dropdownStyleData: DropdownStyleData(
+        maxHeight: 25.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14),
+        ),
+      ),
+      onChanged: (String? newValue) {
+        setState(() {
+          selectedOption = newValue;
+          widget.onChanged(newValue!);
+        });
+      },
+      items: widget.options.map((String option) {
+        return DropdownMenuItem<String>(
+          value: option,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              option,
+              style: bodyNormal.copyWith(
+                color: Colors.black54,
+              ),
+            ),
+          ),
+        );
+      }).toList(),
     );
   }
 }
