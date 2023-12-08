@@ -30,9 +30,10 @@ class DataApiService {
     var uri = Uri.parse(BASE_URL + api);
     try {
       http.Response response = await http.get(uri, headers: {
-        "Authorization": "Bearer ${authController.token.value}",
+        "Authorization": authController.token.value,
       }).timeout(const Duration(seconds: TIME_OUT_DURATION));
-      return _processResponse(response);
+      return response;
+      // return _processResponse(response);
     } on SocketException {
       throw FetchDataException('No Internet connection', uri.toString());
     } on TimeoutException {
@@ -44,11 +45,6 @@ class DataApiService {
   //POST
   Future<dynamic> post(String api, dynamic body) async {
     var uri = Uri.parse(BASE_URL + api);
-    print("Url");
-    print(uri.toString());
-    print("Token");
-    print(authController.token.value);
-    print("Authorization: Bearer ${authController.token.value}");
     try {
       http.Response response = await http
           .post(
@@ -59,7 +55,8 @@ class DataApiService {
             body: body,
           )
           .timeout(const Duration(seconds: TIME_OUT_DURATION));
-      return _processResponse(response);
+      return response;
+      // return _processResponse(response);
     } on SocketException {
       throw FetchDataException('No Internet connection', uri.toString());
     } on TimeoutException {

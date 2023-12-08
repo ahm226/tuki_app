@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_instance/src/bindings_interface.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tuki_app/splash_page.dart';
+
+import 'controllers/admin_controller.dart';
+import 'controllers/auth_controller.dart';
+import 'controllers/general_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,9 +55,9 @@ class InitialBinding extends Bindings {
   @override
   void dependencies() {
     // TODO: implement dependencies
-    // Get.put(GeneralController());
-    // Get.put(AuthController());
-    // Get.put(JobController());
+    Get.put(GeneralController());
+    Get.put(AuthController());
+    Get.put(AdminController());
     // Get.put(NotificationController());
     // Get.put(PricingController());
     // Get.put(ShiftController());
